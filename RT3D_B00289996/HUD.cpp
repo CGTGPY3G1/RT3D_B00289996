@@ -75,20 +75,20 @@ namespace B00289996 {
 
 	void HUD::Render() {
 		glUseProgram(shaderID);
-		glDisable(GL_DEPTH_TEST);//Disable depth test for HUD label
+		glDisable(GL_DEPTH_TEST);
 		glDisable(GL_CULL_FACE);
 		glEnable(GL_BLEND);
 		rt3d::setUniformMatrix4fv(shaderID, "projection", glm::value_ptr(glm::mat4(1.0f)));
-		for(unsigned int i = 0; i < currentTextIndex; i++) {
-			model->SetTexture(textObjects[i].id);
-			model->Render(textObjects[i].transform, shaderID);
-		}
-		currentTextIndex = 0;
 		for(unsigned int i = 0; i < currentTextureIndex; i++) {
 			model->SetTexture(textureObjects[i].id);
 			model->Render(textureObjects[i].transform, shaderID);
 		}
 		currentTextureIndex = 0;
+		for(unsigned int i = 0; i < currentTextIndex; i++) {
+			model->SetTexture(textObjects[i].id);
+			model->Render(textObjects[i].transform, shaderID);
+		}
+		currentTextIndex = 0;
 		glEnable(GL_DEPTH_TEST);
 	}
 

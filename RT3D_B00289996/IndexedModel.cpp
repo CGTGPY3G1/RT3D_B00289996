@@ -39,7 +39,7 @@ namespace B00289996 {
 
 	void IndexedModel::Render(const glm::mat4 & transform, const GLuint & shaderID) {
 		const bool TRANSPARENT = material.diffuse[3] < 0.9999f;
-		if(TRANSPARENT) glDepthMask(GL_FALSE); // disable the depth mask if the model if transparent
+		if(TRANSPARENT) glDepthMask(GL_FALSE); // disable the depth mask if the model is transparent
 		rt3d::setMaterial(shaderID, material);
 		rt3d::setActiveTexture(textureID);
 		rt3d::setUniformMatrix4fv(shaderID, "modelview", glm::value_ptr(transform));

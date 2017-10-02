@@ -318,7 +318,7 @@ namespace B00289996 {
 		model3D->GetTransform().lock()->Rotate(modelStand->GetTransform().lock()->GetRight(), -90.0f);
 		model3D->GetTransform().lock()->Rotate(modelStand->GetTransform().lock()->GetForward(), -90.0f);
 		model3D->GetTransform().lock()->Scale(0.05f);
-		model3D->GetTransform().lock()->Translate(0.0f, 10.0f, 0.0f);
+		model3D->GetTransform().lock()->Translate(0.0f, 0.6f, 0.0f);
 		model3D->GetTransform().lock()->SetParent(modelStand->GetTransform());
 		// set up the objects model
 		std::shared_ptr<AnimatedModel> model = std::make_shared<AnimatedModel>(AnimatedModelType::Human);

@@ -213,7 +213,7 @@ namespace B00289996 {
 			glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), localPosition);
 			glm::mat4 rotationMatrix = glm::mat4_cast(localRotation);
 			glm::mat4 scaleMatrix = glm::scale(glm::mat4(1.0f), localScale);
-			localTransform = scaleMatrix * translationMatrix * rotationMatrix;
+			localTransform = translationMatrix * rotationMatrix * scaleMatrix;
 			if(parent.use_count() > 0) {
 				std::shared_ptr<Transform> p = parent.lock();
 				if(p) {
